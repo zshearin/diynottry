@@ -1,10 +1,28 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['../demo-styling.css']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'angular-quickstart';
+
+  constructor(private router: Router) {
+
+  }
+
+  onHomeClick() {
+    this.router.navigate(['']);
+  }
+
+  onAboutClick() {
+    this.router.navigate(['about']);
+  }
+
+  onProjectsClick() {
+    this.router.navigate(['projects']);
+  }
+
 }
