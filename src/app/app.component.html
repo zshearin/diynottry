@@ -1,13 +1,14 @@
+<div class="all-content px-4">
   <div class="topnav flex flex-row">
-
-    <div class="topnav-section w-3/5"></div>
-    <div class="topnav-section flex flex-row w-2/5">
+    <div class="topnav-section flex flex-row w-220">
       <div class="topnav-item hover-underline-animation mt-3 mb-2 mx-10 cursor-pointer" (click)=onHomeClick()>Home</div>
       <div class="topnav-item hover-underline-animation mt-3 mb-2 mx-10 cursor-pointer" (click)=onAboutClick()>About</div> 
-      <div class="topnav-item hover-underline-animation mt-3 mb-2 mx-10 cursor-pointer" (click)=onProjectsClick()>Projects</div>
+      <div class="topnav-item hover-underline-animation mt-3 mb-2 ml-10 mr-12 cursor-pointer" (click)=onProjectsClick()>Projects</div>
     </div>
 
   </div>
-<div class="main w-full">
+<div class="main-content w-full">
     <router-outlet></router-outlet>
 </div>
+
+</div>  
