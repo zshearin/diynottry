@@ -4,12 +4,35 @@
     text-align: center;
     color: @textColor;
 
-    .latest-projects {
+    .latest-projects-title {
         text-align: left;
+        border-bottom: 2px solid @textColor;
     }
 
     .latest-projects-list {
         text-align: left;
+
+        .latest-project-item {
+            border-bottom: .5px solid @textColor;
+
+        }
     }
 
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+}
+
+ul li:not(:last-child) {
+    border-bottom: 1px solid @textColor;
+}
+
+ul li {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
