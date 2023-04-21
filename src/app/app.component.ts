@@ -21,8 +21,8 @@ export class AppComponent {
     this.router.navigate(['about']);
   }
 
-  onProjectsClick() {
-    this.router.navigate(['projects']);
+  onTopicsClick() {
+    this.router.navigate(['topics']);
   }
 
 }
