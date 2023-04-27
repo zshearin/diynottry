@@ -35,3 +35,32 @@ ul li {
     padding-top: 6px;
     padding-bottom: 6px;
 }
+
+.font-even-smaller {
+    font-size: 12px;
+    line-height: 12px;    
+}
+.font-smaller {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+.font-larger {
+    font-size: 48px;
+    line-height: 48px;
+
+}
+
+.multicolortext {
+    background-image: linear-gradient(to bottom, @textColor, @textColor, #645731, @parenthesisTextColor, white);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+.parenthesis-text-color {
+    color: @parenthesisTextColor;
+}
+.white {
+}
