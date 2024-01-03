@@ -15,11 +15,53 @@ const { pageTitle } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<h1>Zach's Blog</h1>
-        <slot />
+		<div class="mx-auto">
+			<span class="flex flex-row place-content-center">
+				<span class="flex flex-col mt-2 mb-3">
+					<span class="font-smaller tracking-widest ">DI</span>
+					<span class="font-even-smaller tracking-tightest">
+						(
+						<span class="in-parenthesis-text-color tracking-widest">WH</span>
+						)
+					</span>
+				</span>
+				<span class="font-larger mr-3 multicolortext mt-1">Y</span>
+				<span class="font-larger mt-1">NOT TRY</span>    
+			</span>
+		
+		<slot />
 		<Footer />
 		<script>
 			import "../scripts/menu.js";
 		</script>
 	</body>
 </html>
+
+<style>
+
+.font-even-smaller {
+    font-size: 12px;
+    line-height: 12px;    
+}
+.font-smaller {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+.font-larger {
+    font-size: 48px;
+    line-height: 48px;
+}
+
+.multicolortext {
+    background-image: linear-gradient(to bottom, #3d351e, #3d351e, #645731, #e3dbc6, white);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+.in-parenthesis-text-color {
+    color: #e3dbc6;
+}
+</style>
