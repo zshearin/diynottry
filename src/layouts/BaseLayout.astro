@@ -14,31 +14,51 @@ const { pageTitle } = Astro.props;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Header />
-		<div class="mx-auto">
-			<span class="flex flex-row place-content-center">
-				<span class="flex flex-col mt-2 mb-3">
-					<span class="font-smaller tracking-widest ">DI</span>
-					<span class="font-even-smaller tracking-tightest">
-						(
-						<span class="in-parenthesis-text-color tracking-widest">WH</span>
-						)
+		<div class="page-container">
+			<div class="content-wrap">
+				<Header />
+				<div class="mx-auto">
+					<span class="flex flex-row place-content-center">
+						<span class="flex flex-col mt-2 mb-3">
+							<span class="font-smaller tracking-widest ">DI</span>
+							<span class="font-even-smaller tracking-tightest">
+								(
+								<span class="in-parenthesis-text-color tracking-widest">WH</span>
+								)
+							</span>
+						</span>
+						<span class="font-larger mr-5 multicolortext mt-1">Y</span>
+						<span class="font-larger mt-1">NOT TRY</span>    
 					</span>
-				</span>
-				<span class="font-larger mr-3 multicolortext mt-1">Y</span>
-				<span class="font-larger mt-1">NOT TRY</span>    
-			</span>
-		
-		<slot />
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
+				<slot />	
+			</div>
+			<div class="footer">
+				<Footer />
+			</div>
+			<script>
+				import "../scripts/menu.js";
+			</script>
+		</div>
+
 	</body>
 </html>
 
 <style>
+.page-container {
+	position: relative;
+	min-height: 100vh;
+}
 
+.content-wrap {
+  padding-bottom: 48px;    /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48px;            /* Footer height */
+}
 .font-even-smaller {
     font-size: 12px;
     line-height: 12px;    
