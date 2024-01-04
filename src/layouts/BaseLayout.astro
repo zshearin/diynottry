@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} >
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<div class="page-container">
+			<div class="content-wrap">
+				<Header />
+				<div class="mx-auto">
+					<span class="flex flex-row place-content-center">
+						<span class="flex flex-col mt-2 mb-3">
+							<span class="font-smaller tracking-widest ">DI</span>
+							<span class="font-even-smaller tracking-tightest">
+								(
+								<span class="in-parenthesis-text-color tracking-widest">WH</span>
+								)
+							</span>
+						</span>
+						<span class="font-larger mr-5 multicolortext mt-1">Y</span>
+						<span class="font-larger mt-1">NOT TRY</span>    
+					</span>
+				<slot />	
+			</div>
+			<div class="footer">
+				<Footer />
+			</div>
+			<script>
+				import "../scripts/menu.js";
+			</script>
+		</div>
+
+	</body>
+</html>
+
+<style>
+.page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 48px;    /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48px;            /* Footer height */
+}
+.font-even-smaller {
+    font-size: 12px;
+    line-height: 12px;    
+}
+.font-smaller {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+.font-larger {
+    font-size: 48px;
+    line-height: 48px;
+}
+
+.multicolortext {
+    background-image: linear-gradient(to bottom, #3d351e, #3d351e, #645731, #e3dbc6, white);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+.in-parenthesis-text-color {
+    color: #e3dbc6;
+}
+</style>
