@@ -4,6 +4,7 @@ title: 'Dog In the Nighttime: How AI Taught My Dog to Stay Off the Couch'
 pubDate: 2024-01-15
 author: 'Zach Shearin'
 ---
+import YouTubeVid from "../../components/YouTubeVid.astro"
 
 # Problem Statement
 
@@ -24,9 +25,7 @@ I took some pictures of the couch and of my dog at various angles and lighting c
 <br/>
 Now, I had to piece together the detection location and an action.  I used the bottom of each detection box as its position.  If both of these objects were detected in a frame and the dog detection box was above the couch detection box, I assumed Jenny must be on the couch.  Next, I needed  something that would prompt her to get off the couch.  I wrote a function to play a sound that would be called if she was on the couch (man shouting "No!" sounds assertive enough to me!).  I added this logic to the code repository I mentioned earlier and tested it out:
 <br/>
-<center>
-    <iframe class="flex justify-center" width="560" height="315" src="https://www.youtube.com/embed/J1c4TYoAqGA?si=XCJSEnRtoaowGiqZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
+<YouTubeVid url="https://www.youtube.com/embed/J1c4TYoAqGA?si=XCJSEnRtoaowGiqZ"/>
 <br/>
 And just like that, Jenny has learned the couch is not where she belongs and has not been back since! 
 <br />
