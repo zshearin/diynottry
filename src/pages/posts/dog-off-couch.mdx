@@ -4,6 +4,8 @@ title: 'Dog In the Nighttime: How AI Taught My Dog to Stay Off the Couch'
 pubDate: 2024-01-15
 author: 'Zach Shearin'
 ---
+import YouTubeVid from "../../components/YouTubeVid.astro"
+import BlogImage from "../../components/BlogImage.astro"
 
 # Problem Statement
 
@@ -15,20 +17,20 @@ The initial thought was to get a live stream of the living room.  If I saw her o
 # Take 2: Object Detection
 
 I realized I needed something to close the feedback loop.  Something that handled the problem on its own and ran without me being present or monitoring a screen.  Insert vision AI object detection!
-
+<br/>
 I used a Raspberry Pi 4 to do this using the project [yolov5](https://github.com/ultralytics/yolov5) on github as a starting place.  I cloned the repository and installed the required tools and libraries.  I got a basic version of the object detection program working without writing any code because a dog and a couch were both objects the existing model in the repository recognized.  But there were some gaps that needed to be filled before I could use it the way that I wanted.  The first problem was with my camera: it only worked in well-lit areas.  I needed a camera that would work at night.  Once I got new hardware (a camera that switched between day and night modes),  I realized the prebuilt model doesn't work as well with infrared images.  So, I needed a new model too!
 <br/>
 I took some pictures of the couch and of my dog at various angles and lighting conditions, and I trained a model based on those images.  I ended up renaming the dog label to Jenny because that's our dog's name and why not?  The detection piece was now in place!:
-<br/>
-![insert photo of Jenny and couch with image detection](./dog-off-couch/JennyAndCouchWithAIBoxes.jpeg)
-<br/>
+
+<BlogImage
+    imagePath="/src/pages/posts/dog-off-couch/JennyAndCouchWithAIBoxes.jpeg"
+    altText="Jenny in front of the couch with AI Boxes"
+/>
+
 Now, I had to piece together the detection location and an action.  I used the bottom of each detection box as its position.  If both of these objects were detected in a frame and the dog detection box was above the couch detection box, I assumed Jenny must be on the couch.  Next, I needed  something that would prompt her to get off the couch.  I wrote a function to play a sound that would be called if she was on the couch (man shouting "No!" sounds assertive enough to me!).  I added this logic to the code repository I mentioned earlier and tested it out:
-<br/>
-<center>
-    <iframe class="flex justify-center" width="560" height="315" src="https://www.youtube.com/embed/J1c4TYoAqGA?si=XCJSEnRtoaowGiqZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
-<br/>
+<YouTubeVid url="https://www.youtube.com/embed/J1c4TYoAqGA?si=XCJSEnRtoaowGiqZ"/>
 And just like that, Jenny has learned the couch is not where she belongs and has not been back since! 
-<br />
-![Jenny laying in front of couch](./dog-off-couch/JennyInFrontOfCouch.jpeg)
-<br />
+<BlogImage
+    imagePath="/src/pages/posts/dog-off-couch/JennyInFrontOfCouch.jpeg"
+    altText="Jenny laying in front of couch"
+/>
