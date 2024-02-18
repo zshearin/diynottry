@@ -9,9 +9,8 @@ const { frontmatter } = Astro.props;
   <p>{frontmatter.author}</p>
   <p>{frontmatter.pubDate.slice(0,10)}</p>
 
-
   <div class="text-justify">
     <slot />
-
   </div>
+
 </BaseLayout>
