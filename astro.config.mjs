@@ -6,7 +6,6 @@ import addClasses from "rehype-add-classes";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
   site: 'https://www.diynottry.com',
   integrations: [tailwind(), mdx()],
   markdown: {
